@@ -16,10 +16,32 @@ With Composer installed, you can then install the application using the followin
 
 1. Open a console terminal, execute the `init` command and select `dev` as environment.
 
-   ```
-   php init
-   ```
+    ```
+    php init
+    ```
 
 2. Create a new database and adjust the `components['db']` configuration in `common/config/main-local.php` accordingly.
 
-3. Open a console terminal, apply migrations with command `php yii migrate`.
+3. Open a console terminal, apply migrations with following commands:
+    ```
+    php yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations
+    php yii migrate --migrationPath=@yii/rbac/migrations
+    php yii migrate --migrationPath=@vendor/black-lamp/blcms-languages/migrations
+    php yii migrate --migrationPath=@vendor/black-lamp/yii2-multi-lang/migration
+    php yii migrate --migrationPath=@vendor/black-lamp/yii2-seo/migrations
+    php yii migrate --migrationPath=@vendor/black-lamp/blcms-redirect/migrations
+    php yii migrate --migrationPath=@vendor/black-lamp/yii2-articles/common/migrations
+    php yii migrate --migrationPath=@vendor/black-lamp/blcms-shop/migrations
+    php yii migrate --migrationPath=@vendor/black-lamp/blcms-payment/migrations
+    php yii migrate --migrationPath=@vendor/black-lamp/blcms-staticpage/migrations
+    php yii migrate --migrationPath=@vendor/black-lamp/blcms-gallery/migrations
+    php yii migrate
+    ```
+    or
+    ```
+    php yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations --interactive=0 && php yii migrate --migrationPath=@yii/rbac/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-languages/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/yii2-multi-lang/migration --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/yii2-seo/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-redirect/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/yii2-articles/common/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-shop/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-cart/migrations --interactive=0 &&  php yii migrate --migrationPath=@vendor/black-lamp/blcms-staticpage/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-payment/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-rbac/migrations --interactive=0 && php yii migrate --interactive=0 php yii migrate --migrationPath=@vendor/black-lamp/blcms-gallery/migrations --interactive=0 php yii migrate --interactive=0
+    ```
+
+4. Adjust a params accordingly:
+    - The `novaPoshtaApiKey`, `emailHost`, `emailPort` in `frontend/config/params.php`.
+    - The `infoEmailPassword` in `frontend/config/params-local.php`.
