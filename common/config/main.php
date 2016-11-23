@@ -26,6 +26,37 @@ return [
             ]
             */
         ],
+        'i18n' => [
+            'class'      => uran1980\yii\modules\i18n\components\I18N::className(),
+            'languages'  => ['ru', 'uk-ua'],
+            'format'     => 'db',
+            'sourcePath' => [
+                __DIR__ . '/../../frontend',
+                __DIR__ . '/../../backend',
+                __DIR__ . '/../../common',
+            ],
+            'messagePath' => __DIR__  . '/../../messages',
+            'translations' => [
+                '*' => [
+                    'class'           => yii\i18n\DbMessageSource::className(),
+                    'sourceLanguage' => 'en-us',
+                    'enableCaching'   => false,
+//                    'cachingDuration' => 60 * 60 * 2, // cache on 2 hours
+                ],
+                'user' => [
+                    'class'           => yii\i18n\DbMessageSource::className(),
+                    'sourceLanguage' => 'en-us',
+                    'enableCaching'   => false,
+//                    'cachingDuration' => 60 * 60 * 2, // cache on 2 hours
+                ],
+                'cart' => [
+                    'class'           => yii\i18n\DbMessageSource::className(),
+                    'sourceLanguage' => 'en-us',
+                    'enableCaching'   => false,
+//                    'cachingDuration' => 60 * 60 * 2, // cache on 2 hours
+                ],
+            ],
+        ],
         'shop_imagable' => [
             'class' => bl\imagable\Imagable::className(),
             'imageClass' => \bl\imagable\instances\CreateImageImagine::className(),

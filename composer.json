@@ -30,18 +30,22 @@
         "black-lamp/blcms-rbac": "0.*",
         "black-lamp/blcms-redirect": "0.*",
         "black-lamp/blcms-staticpage": "0.*",
-        "black-lamp/blcms-shop": "0.*",
-        "black-lamp/blcms-cart": "0.*",
-        "black-lamp/blcms-nova-poshta" : "0.*",
+        "black-lamp/blcms-shop": "dev-master",
+        "black-lamp/blcms-cart": "dev-master",
+        "black-lamp/blcms-nova-poshta" : "dev-master",
         "black-lamp/blcms-payment": "0.*",
         "black-lamp/blcms-gallery": "0.*",
 
-        "dektrium/yii2-user": "0.9.*"
+        "dektrium/yii2-user": "0.9.*",
+        "uran1980/yii2-translate-panel": "0.1.25",
+        "nirvana-msu/yii2-helpers": "1.0.*@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
+
+        "marqu3s/yii2-summernote": "dev-master",
 
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1"
