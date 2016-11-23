@@ -25,14 +25,15 @@
 
         "black-lamp/yii2-articles": "0.*",
         "black-lamp/yii2-locale": "0.*",
+        "black-lamp/blcms-auth": "0.*",
         "black-lamp/blcms-languages": "0.*",
         "black-lamp/blcms-rbac": "0.*",
         "black-lamp/blcms-redirect": "0.*",
         "black-lamp/blcms-staticpage": "0.*",
         "black-lamp/blcms-shop": "0.*",
-        "black-lamp/blcms-cart": "dev-master",
+        "black-lamp/blcms-cart": "0.*",
         "black-lamp/blcms-nova-poshta" : "0.*",
-        "black-lamp/blcms-payment": "dev-master",
+        "black-lamp/blcms-payment": "0.*",
         "black-lamp/blcms-gallery": "0.*",
 
         "dektrium/yii2-user": "0.9.*"
