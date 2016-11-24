@@ -41,7 +41,8 @@ With Composer installed, you can then install the application using the followin
     ```
     php yii migrate --migrationPath=@vendor/dektrium/yii2-user/migrations --interactive=0 && php yii migrate --migrationPath=@yii/rbac/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-languages/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/yii2-multi-lang/migration --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/yii2-seo/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-redirect/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/yii2-articles/common/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-shop/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-cart/migrations --interactive=0 &&  php yii migrate --migrationPath=@vendor/black-lamp/blcms-staticpage/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-payment/migrations --interactive=0 && php yii migrate --migrationPath=@vendor/black-lamp/blcms-rbac/migrations --interactive=0 && php yii migrate --interactive=0 php yii migrate --migrationPath=@vendor/black-lamp/blcms-gallery/migrations --interactive=0 php yii migrate --interactive=0
     ```
+4. Open a console terminal, execute the `rbac/init` command.
 
-4. Adjust a params accordingly:
-    - The `novaPoshtaApiKey`, `emailHost`, `emailPort` in `frontend/config/params.php`.
+5. Adjust a params accordingly:
+    - The `emailHost`, `emailPort`, `novaPoshtaApiKey` in `frontend/config/params.php`.
     - The `infoEmailPassword` in `frontend/config/params-local.php`.

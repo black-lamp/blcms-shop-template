@@ -9,9 +9,11 @@ $params = array_merge(
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
+    'homeUrl' => '/admin',
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => [
         'log',
+        'bl\cms\shop\backend\components\events\PartnersBootstrap',
         'common\components\AccessBehavior'
     ],
     'modules' => [
