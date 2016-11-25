@@ -1,20 +1,17 @@
 <?php
 namespace frontend\controllers;
 
-use Yii;
-use yii\base\InvalidParamException;
-use yii\web\BadRequestHttpException;
+use bl\articles\common\entities\Article;
+use bl\cms\seo\StaticPageBehavior;
+use bl\cms\shop\common\entities\Product;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\ContactForm;
 
 /**
  * Site controller
+ *
+ * @method StaticPageBehavior registerStaticSeoData
  */
 class SiteController extends Controller
 {
@@ -46,6 +43,10 @@ class SiteController extends Controller
                     'logout' => ['post'],
                 ],
             ],
+            'staticPage' => [
+                'class' => StaticPageBehavior::className(),
+                'key' => 'main'
+            ]
         ];
     }
 
@@ -72,6 +73,35 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $newProducts = Product::find()
+            ->where(['sale' => false])
+            ->orderBy(['creation_time' => SORT_DESC])
+            ->limit(8)
+            ->all();
+
+        $saleProducts = Product::find()
+            ->where(['sale' => true])
+            ->orderBy(['update_time' => SORT_DESC])
+            ->limit(8)
+            ->all();
+
+        $popularProducts = Product::find()
+            ->orderBy(['views' => SORT_DESC])
+            ->limit(8)
+            ->all();
+
+        $newArticles = Article::find()
+            ->orderBy(['created_at' => SORT_DESC])
+            ->limit(3)
+            ->all();
+
+        $this->registerStaticSeoData();
+
+        return $this->render('index/index', [
+            'newProducts' => $newProducts,
+            'saleProducts' => $saleProducts,
+            'popularProducts' => $popularProducts,
+            'newArticles' => $newArticles
+        ]);
     }
 }

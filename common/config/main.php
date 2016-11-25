@@ -26,6 +26,16 @@ return [
             ]
             */
         ],
+        'cart' => [
+            'class' => bl\cms\cart\CartComponent::className(),
+            'emailNotifications' => true,
+            'sender' => $params['senderEmail'],
+            'sendTo' => [
+                $params['orderManagerEmail']
+            ],
+            'saveToDataBase' => true,
+            'enablePayment' => true,
+        ],
         'i18n' => [
             'class'      => uran1980\yii\modules\i18n\components\I18N::className(),
             'languages'  => ['ru', 'uk-ua'],

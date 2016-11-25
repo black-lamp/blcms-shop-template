@@ -33,6 +33,7 @@ class RbacController extends Controller
         $this->addChild($administratorRole, $auth->getRole('staticPageManager'));
         $this->addChild($administratorRole, $auth->getRole('vendorManager'));
         $this->addChild($administratorRole, $auth->getRole('moderationManager'));
+        $this->addChild($administratorRole, $auth->getRole('galleryManager'));
         //endregion
 
         //region productPartner

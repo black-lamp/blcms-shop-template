@@ -4,52 +4,57 @@
  * @var $this yii\web\View
  */
 
+use bl\articles\widgets\LastArticles;
+use bl\cms\cart\widgets\NewOrders;
+use bl\cms\shop\widgets\NewProducts;
+use yii\helpers\Url;
+
 $this->title = Yii::$app->name;
 ?>
-<div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="<?= Url::to(['/shop/product']) ?>">
+                    <h3 class="panel-title"><?= Yii::t('admin', 'Last orders') ?></h3>
+                </a>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            <div class="panel-body">
+                <?= NewOrders::widget([
+                    'num' => 15,
+                ]) ?>
             </div>
         </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="<?= Url::to(['/shop/product']) ?>">
+                    <h3 class="panel-title"><?= Yii::t('admin', 'Last products') ?></h3>
+                </a>
+            </div>
+            <div class="panel-body">
+                <?= NewProducts::widget([
+                    'num' => 15,
+                ]) ?>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="<?= Url::to(['/shop/product']) ?>">
+                    <h3 class="panel-title"><?= Yii::t('admin', 'Last articles') ?></h3>
+                </a>
+            </div>
+            <div class="panel-body">
+                <?= LastArticles::widget([
+                    'count' => 15,
+                ]) ?>
+            </div>
+        </div>
     </div>
 </div>
