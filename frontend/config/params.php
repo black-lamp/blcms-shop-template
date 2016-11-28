@@ -6,4 +6,6 @@ return [
     'emailPort' => '587',
     //  this is required by 'nova-poshta' module config
     'novaPoshtaApiKey' => '',
+
+    'themeName' => 'blcms-shop-template',
 ];

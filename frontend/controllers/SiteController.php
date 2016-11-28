@@ -73,6 +73,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->registerStaticSeoData();
+
         $newProducts = Product::find()
             ->where(['sale' => false])
             ->orderBy(['creation_time' => SORT_DESC])
@@ -90,18 +92,10 @@ class SiteController extends Controller
             ->limit(8)
             ->all();
 
-        $newArticles = Article::find()
-            ->orderBy(['created_at' => SORT_DESC])
-            ->limit(3)
-            ->all();
-
-        $this->registerStaticSeoData();
-
         return $this->render('index/index', [
             'newProducts' => $newProducts,
             'saleProducts' => $saleProducts,
-            'popularProducts' => $popularProducts,
-            'newArticles' => $newArticles
+            'popularProducts' => $popularProducts
         ]);
     }
 }

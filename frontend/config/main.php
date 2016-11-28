@@ -135,8 +135,8 @@ return [
             'messageConfig' => [
                 'charset' => 'UTF-8',
             ],
-            'viewPath' => '@vendor/black-lamp/blcms-shop/frontend/views/partner-request/mail',
-            'htmlLayout' => '@vendor/black-lamp/blcms-shop/frontend/views/partner-request/mail/layout',
+            'viewPath' => '@bl/blcms-shop/frontend/views/partner-request/mail',
+            'htmlLayout' => '@bl/blcms-shop/frontend/views/partner-request/mail/layout',
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'username' => $params['infoEmail'],
@@ -151,8 +151,8 @@ return [
             'messageConfig' => [
                 'charset' => 'UTF-8',
             ],
-            'viewPath' => '@vendor/black-lamp/blcms-cart/frontend/views/mail',
-            'htmlLayout' => '@vendor/black-lamp/blcms-cart/frontend/views/mail/layout',
+            'viewPath' => '@bl/blcms-cart/frontend/views/mail',
+            'htmlLayout' => '@bl/blcms-cart/frontend/views/mail/layout',
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'username' => $params['infoEmail'],
@@ -161,6 +161,25 @@ return [
                 'port' => $params['emailPort'],
             ],
         ],
+        'view' => [
+            'theme' => [
+                'basePath' => '@frontend/themes/' . $params['themeName'],
+                'baseUrl' => '@web/themes/' . $params['themeName'],
+                'pathMap' => [
+                    '@dektrium/user/views' => '@frontend/themes/' . $params['themeName'] . '/modules/blcms-shop/views/user',
+                    '@frontend/views' => '@frontend/themes/' . $params['themeName'] . '/views',
+                    '@bl/yii2-articles/frontend' => '@frontend/themes/' . $params['themeName'] . '/modules/yii2-articles',
+                    '@bl/yii2-articles/common/widgets/views' => '@frontend/themes/' . $params['themeName'] . '/modules/yii2-articles/widgets/views',
+                    '@bl/blcms-shop/frontend/views' => '@frontend/themes/' . $params['themeName'] . '/modules/blcms-shop/views',
+                    '@bl/blcms-shop/widgets/views' => '@frontend/themes/' . $params['themeName'] . '/modules/blcms-shop/widgets/views',
+                    '@bl/blcms-cart/frontend/views/cart' => '@frontend/themes/' . $params['themeName'] . '/modules/blcms-cart/views',
+                    '@bl/blcms-cart/widgets/views' => '@frontend/themes/' . $params['themeName'] . '/modules/blcms-cart/widgets/views',
+                    '@bl/blcms-gallery/frontend/views' => '@frontend/themes/' . $params['themeName'] . '/modules/blcms-gallery/views',
+                    '@bl/blcms-payment/widgets/views' => '@frontend/themes/' . $params['themeName'] . '/modules/blcms-payment/widgets/views',
+                    '@bl/yii2-newsletter/frontend/widgets/views' => '@frontend/themes/' . $params['themeName'] . '/modules/yii2-newsletter/widgets/views'
+                ],
+            ]
+        ]
     ],
     'params' => $params,
 ];
