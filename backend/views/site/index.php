@@ -4,7 +4,7 @@
  * @var $this yii\web\View
  */
 
-use bl\articles\widgets\LastArticles;
+use bl\articles\common\widgets\LastArticles;
 use bl\cms\cart\widgets\NewOrders;
 use bl\cms\shop\widgets\NewProducts;
 use yii\helpers\Url;
@@ -16,11 +16,11 @@ $this->title = Yii::$app->name;
         <div class="panel panel-default">
             <div class="panel-heading">
                 <a href="<?= Url::to(['/shop/product']) ?>">
-                    <h3 class="panel-title"><?= Yii::t('admin', 'Last orders') ?></h3>
+                    <h3 class="panel-title"><?= Yii::t('admin', 'Last products') ?></h3>
                 </a>
             </div>
             <div class="panel-body">
-                <?= NewOrders::widget([
+                <?= NewProducts::widget([
                     'num' => 15,
                 ]) ?>
             </div>
@@ -30,11 +30,11 @@ $this->title = Yii::$app->name;
         <div class="panel panel-default">
             <div class="panel-heading">
                 <a href="<?= Url::to(['/shop/product']) ?>">
-                    <h3 class="panel-title"><?= Yii::t('admin', 'Last products') ?></h3>
+                    <h3 class="panel-title"><?= Yii::t('admin', 'Last orders') ?></h3>
                 </a>
             </div>
             <div class="panel-body">
-                <?= NewProducts::widget([
+                <?= NewOrders::widget([
                     'num' => 15,
                 ]) ?>
             </div>

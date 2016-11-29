@@ -12,48 +12,61 @@ use bl\cms\shop\common\entities\Product;
 ?>
 
 <section class="new-products">
-    <div class="row">
-        <div class="col-md-12">
-            <?php if (!empty($newProducts)): ?>
-                <h2 class="text-center"><?= Yii::t('shop', 'Sale products'); ?></h2>
+    <?php if (!empty($newProducts)): ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="text-center"><?= Yii::t('shop', 'Sale products'); ?></h3>
+            </div>
+            <div class="panel-body">
                 <?= $this->render('_products', [
-                'products' => $newProducts
-            ]) ?>
-            <?php endif; ?>
+                    'products' => $newProducts
+                ]) ?>
+            </div>
         </div>
-    </div>
+    <?php endif; ?>
 </section>
 
 <section class="sale-products">
-    <div class="row">
-        <div class="col-md-12">
-            <?php if(!empty($saleProducts)): ?>
-                <h2 class="text-center"><?= Yii::t('shop', 'Sale products'); ?></h2>
+    <?php if(!empty($saleProducts)): ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="text-center"><?= Yii::t('shop', 'Sale products'); ?></h3>
+            </div>
+            <div class="panel-body">
                 <?= $this->render('_products', [
                     'products' => $saleProducts
                 ]) ?>
-            <?php endif; ?>
+            </div>
         </div>
-    </div>
+    <?php endif; ?>
 </section>
 
 <section class="popular-products">
-    <div class="row">
-        <div class="col-md-12">
-            <?php if (!empty($popularProducts)): ?>
-                <h2 class="text-center"><?= Yii::t('shop', 'New products'); ?></h2>
+    <?php if (!empty($popularProducts)): ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="text-center"><?= Yii::t('shop', 'New products'); ?></h3>
+            </div>
+            <div class="panel-body">
                 <?= $this->render('_products', [
                     'products' => $popularProducts
                 ]) ?>
-            <?php endif; ?>
+            </div>
         </div>
-    </div>
+    <?php endif; ?>
 </section>
 
+
 <section class="news">
-    <h2 class="text-center"><?= Yii::t('articles', 'Last articles'); ?></h2>
-    <?= LastArticles::widget([
-        'count' => 4,
-        'condition' => ['show' => true]
-    ]) ?>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="text-center"><?= Yii::t('articles', 'Last articles'); ?></h3>
+        </div>
+        <div class="panel-body">
+            <?= LastArticles::widget([
+                'count' => 4,
+                'condition' => ['show' => true]
+            ]) ?>
+        </div>
+    </div>
 </section>
