@@ -128,12 +128,7 @@ return [
                 'basePath' => '@backend/themes/' . $params['themeName'],
                 'baseUrl' => '@web/themes/' . $params['themeName'],
                 'pathMap' => [
-                    '@bl/blcms-shop/backend/views' => '@vendor/GutsVadim/blcms-itpl/modules/blcms-shop/views',
-                    '@bl/blcms-cart/backend/views' => '@vendor/GutsVadim/blcms-itpl/modules/blcms-cart/views',
-                    '@bl/blcms-staticpage/backend/views' => '@vendor/GutsVadim/blcms-itpl/modules/blcms-staticpage/views',
-                    '@bl/blcms-payment/backend/views' => '@vendor/GutsVadim/blcms-itpl/modules/blcms-payment/views',
                     '@dektrium/user/views' => '@vendor/black-lamp/blcms-shop/backend/views/user',
-                    '@vendor/uran1980/yii2-translate-panel/views/default' => '@vendor/GutsVadim/blcms-itpl/modules/yii2-translate-panel/views/default'
                 ],
             ],
         ],

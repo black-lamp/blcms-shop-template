@@ -35,7 +35,9 @@ $cart = Yii::$app->cart;
                 <a href="<?= Url::toRoute('/cart') ?>" class="btn btn-default">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
                     <span><?= Yii::$app->formatter->asCurrency($cart->getTotalCost()); ?></span>
-                    <span class="label label-info"><?= $cart->getOrderItemsCount() ?></span>
+                    <?php if($cart->getOrderItemsCount() != 0): ?>
+                        <span class="label label-info"><?= $cart->getOrderItemsCount() ?></span>
+                    <?php endif ?>
                 </a>
             </div>
         </div>

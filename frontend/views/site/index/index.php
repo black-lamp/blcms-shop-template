@@ -58,15 +58,17 @@ use bl\cms\shop\common\entities\Product;
 
 
 <section class="news">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="text-center"><?= Yii::t('articles', 'Last articles'); ?></h3>
+    <?php if (!empty($popularProducts)): ?>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="text-center"><?= Yii::t('articles', 'Last articles'); ?></h3>
+            </div>
+            <div class="panel-body">
+                <?= LastArticles::widget([
+                    'count' => 4,
+                    'condition' => ['show' => true]
+                ]) ?>
+            </div>
         </div>
-        <div class="panel-body">
-            <?= LastArticles::widget([
-                'count' => 4,
-                'condition' => ['show' => true]
-            ]) ?>
-        </div>
-    </div>
+    <?php endif; ?>
 </section>
