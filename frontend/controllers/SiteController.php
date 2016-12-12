@@ -45,7 +45,7 @@ class SiteController extends Controller
             ],
             'staticPage' => [
                 'class' => StaticPageBehavior::className(),
-                'key' => 'main'
+                'key' => 'home'
             ]
         ];
     }

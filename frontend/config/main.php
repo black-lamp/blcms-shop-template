@@ -15,16 +15,15 @@ return [
     ],
     'controllerNamespace' => 'frontend\controllers',
     'modules' => [
-        'articles' => [
-            'class' => bl\articles\frontend\Module::className()
-        ],
         'shop' => [
             'class' => bl\cms\shop\frontend\Module::className(),
             'partnerManagerEmail' => $params['partnerManagerEmail'],
-            'senderEmail' => $params['infoEmail']
+            'senderEmail' => $params['infoEmail'],
+            'showChildCategoriesProducts' => true,
         ],
         'cart' => [
             'class' => bl\cms\cart\frontend\Module::className(),
+            'enableLog' => true,
         ],
         'payment' => [
             'class' => bl\cms\payment\frontend\Module::className(),
@@ -37,10 +36,13 @@ return [
                 'RegistrationForm' => bl\cms\cart\common\components\user\models\RegistrationForm::className(),
             ],
             'controllerMap' => [
-                'registration' => bl\cms\cart\common\components\user\controllers\RegistrationController::className(),
+                'registration' => bl\cms\cart\frontend\components\user\controllers\RegistrationController::className(),
                 'settings' => bl\cms\cart\frontend\components\user\controllers\SettingsController::className(),
             ],
             'as frontend' => dektrium\user\filters\FrontendFilter::className(),
+        ],
+        'articles' => [
+            'class' => bl\articles\frontend\Module::className()
         ],
         'gallery' => [
             'class' => bl\cms\gallery\frontend\Module::className(),
@@ -61,6 +63,7 @@ return [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
         ],
+        /*
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -70,6 +73,7 @@ return [
                 ],
             ],
         ],
+        */
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

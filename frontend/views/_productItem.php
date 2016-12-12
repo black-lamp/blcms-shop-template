@@ -15,7 +15,9 @@ $productUrl = Url::to(['/shop/product/show',
 
 <div class="thumbnail">
     <a href="<?= $productUrl ?>">
-        <img src="<?= $model->image->small ?>" alt="">
+        <?php if (!empty($model->image)): ?>
+            <img src="<?= $model->image->small ?>" alt="">
+        <?php endif ?>
     </a>
     <div class="caption">
         <a href="<?= $productUrl ?>">

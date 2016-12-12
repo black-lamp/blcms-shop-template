@@ -13,36 +13,40 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => [
         'log',
-        'bl\cms\shop\backend\components\events\PartnersBootstrap',
+//        'bl\cms\shop\backend\components\events\PartnersBootstrap',
+        'bl\cms\shop\backend\components\events\ShopLogBootstrap',
+        'bl\cms\cart\backend\components\events\CartBootstrap',
         'common\components\AccessBehavior'
     ],
     'modules' => [
-        'articles' => [
-            'class' => bl\articles\backend\Module::className()
-        ],
         'languages' => [
             'class' => bl\cms\language\Module::className(),
         ],
         'redirect' => [
             'class' => bl\cms\redirect\Module::className()
         ],
-        'shop' => [
-            'class' => bl\cms\shop\backend\Module::className(),
-        ],
-        'gallery' => [
-            'class' => bl\cms\gallery\backend\Module::className(),
-        ],
-        'cart' => [
-            'class' => bl\cms\cart\backend\Module::className(),
-        ],
-        'payment' => [
-            'class' => bl\cms\payment\backend\Module::className(),
-        ],
         'rbac' => [
             'class' => bl\rbac\Module::className(),
         ],
         'seo' => [
             'class' => bl\cms\seo\backend\Module::className()
+        ],
+        'shop' => [
+            'class' => bl\cms\shop\backend\Module::className(),
+            'enableLog' => true,
+        ],
+        'cart' => [
+            'class' => bl\cms\cart\backend\Module::className(),
+            'enableLog' => true,
+        ],
+        'payment' => [
+            'class' => bl\cms\payment\backend\Module::className(),
+        ],
+        'articles' => [
+            'class' => bl\articles\backend\Module::className()
+        ],
+        'gallery' => [
+            'class' => bl\cms\gallery\backend\Module::className(),
         ],
         'user' => [
             'class' => dektrium\user\Module::className(),
@@ -87,6 +91,7 @@ return [
                 'path'     => '/admin',
             ],
         ],
+        /*
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -96,6 +101,7 @@ return [
                 ],
             ],
         ],
+        */
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

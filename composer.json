@@ -11,10 +11,10 @@
     },
     "minimum-stability": "stable",
     "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/black-lamp/blcms-payment.git"
-        }
+      {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+      }
     ],
     "require": {
         "php": ">=5.4.0",
@@ -23,17 +23,16 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "yiisoft/yii2-jui": "~2.0.0",
 
-        "black-lamp/yii2-articles": "dev-master",
+        "black-lamp/yii2-articles": "0.6.*",
         "black-lamp/yii2-locale": "0.*",
-        "black-lamp/blcms-auth": "0.*",
         "black-lamp/blcms-languages": "0.*",
         "black-lamp/blcms-rbac": "0.*",
         "black-lamp/blcms-redirect": "0.*",
         "black-lamp/blcms-staticpage": "0.*",
-        "black-lamp/blcms-shop": "dev-master",
-        "black-lamp/blcms-cart": "dev-master",
-        "black-lamp/blcms-nova-poshta" : "dev-master",
-        "black-lamp/blcms-payment": "dev-master",
+        "black-lamp/blcms-shop": "0.2.*",
+        "black-lamp/blcms-cart": "0.1.0",
+        "black-lamp/blcms-nova-poshta" : "0.*",
+        "black-lamp/blcms-payment": "0.*",
         "black-lamp/blcms-gallery": "0.*",
 
         "dektrium/yii2-user": "0.9.*",

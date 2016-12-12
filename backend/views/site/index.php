@@ -16,7 +16,7 @@ $this->title = Yii::$app->name;
         <div class="panel panel-default">
             <div class="panel-heading">
                 <a href="<?= Url::to(['/shop/product']) ?>">
-                    <h3 class="panel-title"><?= Yii::t('admin', 'Last products') ?></h3>
+                    <h3 class="panel-title"><?= Yii::t('backend', 'Last products') ?></h3>
                 </a>
             </div>
             <div class="panel-body">
@@ -30,7 +30,7 @@ $this->title = Yii::$app->name;
         <div class="panel panel-default">
             <div class="panel-heading">
                 <a href="<?= Url::to(['/shop/product']) ?>">
-                    <h3 class="panel-title"><?= Yii::t('admin', 'Last orders') ?></h3>
+                    <h3 class="panel-title"><?= Yii::t('backend', 'Last orders') ?></h3>
                 </a>
             </div>
             <div class="panel-body">
@@ -47,7 +47,7 @@ $this->title = Yii::$app->name;
         <div class="panel panel-default">
             <div class="panel-heading">
                 <a href="<?= Url::to(['/shop/product']) ?>">
-                    <h3 class="panel-title"><?= Yii::t('admin', 'Last articles') ?></h3>
+                    <h3 class="panel-title"><?= Yii::t('backend', 'Last articles') ?></h3>
                 </a>
             </div>
             <div class="panel-body">

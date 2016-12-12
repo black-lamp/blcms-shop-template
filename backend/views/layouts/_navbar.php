@@ -4,18 +4,18 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Html;
 
+$currentLanguage = Language::getCurrent();
 
 ?>
 <?php
 NavBar::begin([
     'brandLabel' => Yii::$app->name,
-    'brandUrl' => [Yii::$app->homeUrl],
+    'brandUrl' => ['/'],
     'options' => [
         'class' => 'navbar-inverse navbar-fixed-top',
     ],
 ]);
 $menuItems = [
-    ['label' => Yii::t('yii', 'Home'), 'url' => ['/site/index']],
     [
         'label' => Yii::t('menu', 'Catalog'),
         'items' => [
@@ -28,7 +28,7 @@ $menuItems = [
             ['label' => Yii::t('menu', 'Filters'), 'url' => ['/shop/filter']],
             ['label' => Yii::t('menu', 'Currency'), 'url' => ['/shop/currency']],
             ['label' => Yii::t('menu', 'Partners'), 'url' => ['/shop/partners']],
-            ['label' => Yii::t('menu', 'Add product'), 'url' => ['/shop/product/save', 'languageId' => Language::getCurrent()->id]],
+            ['label' => Yii::t('menu', 'Add product'), 'url' => ['/shop/product/save', 'languageId' => $currentLanguage->id]],
         ],
     ],
     [

@@ -1,4 +1,9 @@
 <?php
+$params = array_merge(
+    require(__DIR__ . '/params.php'),
+    require(__DIR__ . '/params-local.php')
+);
+
 return [
     'name' => 'BLCMS Shop Template',
 
@@ -10,6 +15,49 @@ return [
         '@bl' => '@vendor/black-lamp',
     ],
     'components' => [
+        'log' => [
+            'targets' => [
+                [
+                    'logTable' => 'error_log',
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['error'],
+                    'except' => [
+                        'yii\web\HttpException:404',
+                        'yii\web\HttpException:403',
+                        'yii\web\HttpException:400',
+                        'yii\i18n\PhpMessageSource::loadMessages'
+                    ],
+                ],
+                [
+                    'logTable' => 'shop_log',
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['info'],
+                    'logVars' => [],
+                    'categories' => [
+                        'afterCreateProduct', 'afterDeleteProduct', 'afterEditProduct',
+                        'afterCreateCategory', 'afterEditCategory', 'afterDeleteCategory',
+                    ],
+                ],
+                [
+                    'logTable' => 'cart_log',
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['info'],
+                    'logVars' => [],
+                    'categories' => [
+                        'afterChangeOrderStatus'
+                    ],
+                ],
+                [
+                    'logTable' => 'user_log',
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['info'],
+                    'logVars' => [],
+                    'categories' => [
+                        'afterRegister', 'afterConfirm'
+                    ],
+                ],
+            ],
+        ],
         'cache' => [
             'class' => yii\caching\FileCache::className(),
         ],
@@ -48,18 +96,6 @@ return [
             'messagePath' => __DIR__  . '/../../messages',
             'translations' => [
                 '*' => [
-                    'class'           => yii\i18n\DbMessageSource::className(),
-                    'sourceLanguage' => 'en-us',
-                    'enableCaching'   => false,
-//                    'cachingDuration' => 60 * 60 * 2, // cache on 2 hours
-                ],
-                'user' => [
-                    'class'           => yii\i18n\DbMessageSource::className(),
-                    'sourceLanguage' => 'en-us',
-                    'enableCaching'   => false,
-//                    'cachingDuration' => 60 * 60 * 2, // cache on 2 hours
-                ],
-                'cart' => [
                     'class'           => yii\i18n\DbMessageSource::className(),
                     'sourceLanguage' => 'en-us',
                     'enableCaching'   => false,
