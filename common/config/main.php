@@ -13,6 +13,7 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
         '@bl' => '@vendor/black-lamp',
+        '@bower' => '@vendor/bower-asset',
     ],
     'components' => [
         'log' => [
